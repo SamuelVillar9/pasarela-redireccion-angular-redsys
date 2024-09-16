@@ -1,0 +1,122 @@
+<div class="container p-5">
+  <div class="card text-center">
+    <div class="card-header bg-warning">
+      <h1>EJEMPLO FORMULARIO DE PAGO REDIRECCIÓN || REDSYS</h1>
+    </div>
+    <div class="card-body m-5">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row m-5">
+          <!-- ################## AMOUNT ################## -->
+          <div class="input-group mb-3">
+            <span class="input-group-text text-start" id="euros-addon">DS_MERCHANT_AMOUNT</span>
+            <input
+              type="text"
+              [(ngModel)]="euros"
+              name="euros"
+              id="euros"
+              class="form-control text-end"
+              aria-describedby="euros-addon"
+              required
+              style="width: 575px;"
+            />
+            <span class="input-group-text text-start" id="cents-addon">,</span>
+            <input
+              type="text"
+              [(ngModel)]="cents"
+              name="cents"
+              id="cents"
+              class="form-control text-start"
+              aria-describedby="cents-addon"
+              required
+              maxlength="2"
+            />
+            <span class="input-group-text text-start" id="eu-addon">€</span>
+          </div>
+          <!-- ################## CURRENCY ################## -->
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text text-start"
+              for="DS_MERCHANT_CURRENCY"
+              id="basic-addon3"
+              >DS_MERCHANT_CURRENCY</span
+            >
+            <input
+              type="text"
+              [(ngModel)]="DS_MERCHANT_CURRENCY"
+              name="DS_MERCHANT_CURRENCY"
+              id="DS_MERCHANT_CURRENCY"
+              class="form-control text-end"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              required
+            />
+          </div>
+          <!-- ################## FUC ################## -->
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text text-start"
+              for="DS_MERCHANT_MERCHANTCODE"
+              id="basic-addon3"
+              >DS_MERCHANT_MERCHANTCODE</span
+            >
+            <input
+              type="text"
+              [(ngModel)]="DS_MERCHANT_MERCHANTCODE"
+              name="DS_MERCHANT_MERCHANTCODE"
+              id="DS_MERCHANT_MERCHANTCODE"
+              class="form-control text-end"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              required
+            />
+          </div>
+          <!-- ################## TERMINAL ################## -->
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text text-start"
+              for="DS_MERCHANT_TERMINAL"
+              id="basic-addon3"
+              >DS_MERCHANT_TERMINAL</span
+            >
+            <input
+              type="text"
+              [(ngModel)]="DS_MERCHANT_TERMINAL"
+              name="DS_MERCHANT_TERMINAL"
+              id="DS_MERCHANT_TERMINAL"
+              class="form-control text-end"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              required
+            />
+          </div>
+          <!-- ################## TIPO TRANSACCIÓN ################## -->
+          <div class="input-group mb-3">
+            <span
+              class="input-group-text text-start"
+              for="DS_MERCHANT_TRANSACTIONTYPE"
+              id="basic-addon3"
+              >DS_MERCHANT_TRANSACTIONTYPE</span
+            >
+            <input
+              type="text"
+              [(ngModel)]="DS_MERCHANT_TRANSACTIONTYPE"
+              name="DS_MERCHANT_TRANSACTIONTYPE"
+              id="DS_MERCHANT_TRANSACTIONTYPE"
+              class="form-control text-end"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+              required
+            />
+          </div>
+        </div>
+        <div class="row m-5">
+          <div class="col-12">
+            <button type="submit" class="btn btn-danger">
+              <b>Realizar Pago</b>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

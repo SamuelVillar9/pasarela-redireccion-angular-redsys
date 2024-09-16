@@ -1,0 +1,87 @@
+<div class="container text-center text-white">
+  <div *ngIf="objetoMerchant.Ds_Response == '0000'">
+    <div class="card">
+        <div class="card-body mx-4">
+          <div class="container">
+            <div class="text-light bg-success">
+              <h2>OPERACIÓN AUTORIZADA || CÓDIGO {{ objetoMerchant.Ds_AuthorisationCode }}</h2>
+            </div>
+            <div class="row">
+              <ul class="list-unstyled">
+                <li class="text-black">
+                  <b>Código Operación:</b>
+                  {{ objetoMerchant.Ds_Response }}
+                </li>
+                <li class="text-muted mt-1">
+                  <span class="text-black"><b>Número de pedido:</b></span>
+                  {{ objetoMerchant.Ds_Order }}
+                </li>
+                <li class="text-black mt-1">
+                  {{ objetoMerchant.Ds_Date }} || {{ objetoMerchant.Ds_Hour }}
+                </li>
+              </ul>
+              <hr />
+              <div class="row text-black">
+                <div class="col-xl-12">
+                  <h3>IMPORTE TOTAL: {{ objetoMerchant.Ds_Amount}} €</h3>
+                </div>
+                <hr style="border: 2px solid black" />
+              </div>
+              <div class="text-center" style="margin-top: 90px">
+                <a [routerLink]="['/']" routerLinkActive="router-link-active"
+                  >Volver al Inicio</a
+                >
+                <p>
+                  (c) 2024 Redsys Servicios de Procesamiento. SL - Todos los
+                  derechos reservados
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div *ngIf="objetoMerchant.Ds_Response != '0000'">
+    <div class="card">
+      <div class="card-body mx-4">
+        <div class="container">
+          <div class="text-light bg-danger">
+            <h2>UPS! Algo ha salido mal.</h2>
+          </div>
+          <div class="row">
+            <ul class="list-unstyled">
+              <li class="text-black">
+                <b>Código Operación:</b>
+                {{ objetoMerchant.Ds_Response }}
+              </li>
+              <li class="text-muted mt-1">
+                <span class="text-black"><b>Número de pedido:</b></span>
+                {{ objetoMerchant.Ds_Order }}
+              </li>
+              <li class="text-black mt-1">
+                {{ objetoMerchant.Ds_Date }} || {{ objetoMerchant.Ds_Hour }}
+              </li>
+            </ul>
+            <hr />
+            <div class="row text-black">
+              <div class="col-xl-12">
+                <h3>IMPORTE TOTAL: {{ objetoMerchant.Ds_Amount}} €</h3>
+              </div>
+              <hr style="border: 2px solid black" />
+            </div>
+            <div class="text-center" style="margin-top: 90px">
+              <a [routerLink]="['/']" routerLinkActive="router-link-active"
+                >Volver al Inicio</a
+              >
+              <p>
+                (c) 2024 Redsys Servicios de Procesamiento. SL - Todos los
+                derechos reservados
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
